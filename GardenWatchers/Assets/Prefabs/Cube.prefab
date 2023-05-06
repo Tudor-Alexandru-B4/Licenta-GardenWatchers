@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2111535717275326059}
   - component: {fileID: 7926632107320453197}
   - component: {fileID: 9134231118828978931}
+  - component: {fileID: 1141338093174208685}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -97,3 +98,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1141338093174208685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4204929431817636717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd9556f91638dce418edcb780dcd77a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxWater: 100
+  currentWater: 0
+  passiveDrainSpeed: 1
+  activeDrainSpeed: 0

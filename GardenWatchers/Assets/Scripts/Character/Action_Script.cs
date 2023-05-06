@@ -11,6 +11,7 @@ public class Action_Script : MonoBehaviour
     public string seedLeft;
 
     public Planting_Script farmLandDetector;
+    public Watering_Script plantDetector;
     public PickUp_Script pickUpDetector;
     public List<GameObject> seedList;
     public int seedIndex = 0;
@@ -52,6 +53,10 @@ public class Action_Script : MonoBehaviour
             if (farmLandDetector.TryToPlant(seedList[seedIndex]))
             {
                 Destroy(pickUp);
+            }
+            else
+            {
+                plantDetector.TryToWater();
             }
         }
 

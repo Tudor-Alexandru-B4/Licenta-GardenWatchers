@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -12,12 +10,6 @@ public class Planting_Script : MonoBehaviour
     void Start()
     {
         playerAction = gameObject.transform.parent.GetComponent<Action_Script>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     private void OnTriggerEnter(Collider other)
@@ -57,6 +49,7 @@ public class Planting_Script : MonoBehaviour
             plant.transform.parent = planter.gameObject.transform;
             plant.gameObject.tag = "Plant";
             AddNavObstacle(plant);
+            plant.gameObject.GetComponent<WaterLife>().planted = true;
             return true;
         }
         return false;
