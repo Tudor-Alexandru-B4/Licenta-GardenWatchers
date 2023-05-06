@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Planting_Script : MonoBehaviour
 {
@@ -54,6 +55,8 @@ public class Planting_Script : MonoBehaviour
             spawnPosition.y = prefab.transform.position.y;
             GameObject plant = Instantiate(prefab, spawnPosition, Quaternion.identity);
             plant.transform.parent = planter.gameObject.transform;
+            plant.gameObject.tag = "Plant";
+            AddNavObstacle(plant);
             return true;
         }
         return false;
@@ -104,5 +107,13 @@ public class Planting_Script : MonoBehaviour
         {
             Destroy(foundShadow.gameObject);
         }
+    }
+
+    private void AddNavObstacle(GameObject plant)
+    {
+        var navObstacle = plant.AddComponent<NavMeshObstacle>();
+        navObstacle.shape = NavMeshObstacleShape.Box;
+        navObstacle.size = planter.transform.localScale;
+        navObstacle.carving = true;
     }
 }
