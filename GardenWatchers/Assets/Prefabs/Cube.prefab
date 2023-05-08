@@ -114,3 +114,4 @@ MonoBehaviour:
   currentWater: 0
   passiveDrainSpeed: 1
   activeDrainSpeed: 0
+  planted: 0

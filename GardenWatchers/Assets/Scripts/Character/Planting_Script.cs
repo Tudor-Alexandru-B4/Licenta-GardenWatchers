@@ -3,6 +3,7 @@ using UnityEngine.AI;
 
 public class Planting_Script : MonoBehaviour
 {
+    public GameObject waterLevelDisplayPrefab;
     private GameObject planter;
     private Action_Script playerAction;
 
@@ -49,6 +50,7 @@ public class Planting_Script : MonoBehaviour
             plant.transform.parent = planter.gameObject.transform;
             plant.gameObject.tag = "Plant";
             AddNavObstacle(plant);
+            Instantiate(waterLevelDisplayPrefab, plant.transform);
             plant.gameObject.GetComponent<WaterLife>().planted = true;
             return true;
         }

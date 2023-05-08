@@ -21,6 +21,12 @@ public class WaterLife : MonoBehaviour
         if (planted)
         {
             currentWater -= (passiveDrainSpeed + activeDrainSpeed) * Time.deltaTime;
+
+            if(transform.childCount > 0)
+            {
+                transform.GetChild(0).GetComponent<WaterLevelDisplay>().UpdateValue(currentWater, maxWater);
+            }
+
             if (currentWater < 0)
             {
                 Destroy(gameObject);
