@@ -2,13 +2,13 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
-using static UnityEngine.GraphicsBuffer;
 
 public class EnemyMovement : MonoBehaviour
 {
     NavMeshAgent agent;
-    GameObject target = null;
+    public GameObject target = null;
     GameObject well;
+    public bool canMove = true;
 
     // Start is called before the first frame update
     void Start()

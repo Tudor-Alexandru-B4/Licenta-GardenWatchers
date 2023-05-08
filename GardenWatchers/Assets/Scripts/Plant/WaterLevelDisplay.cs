@@ -17,8 +17,8 @@ public class WaterLevelDisplay : MonoBehaviour
         maxDistance = max - min;
         transform.LookAt(Camera.main.transform);
         Quaternion rotation = transform.rotation;
-        transform.rotation = Quaternion.Euler(rotation.eulerAngles.x * -1, rotation.eulerAngles.y, rotation.eulerAngles.z);
-
+        transform.rotation = Quaternion.Euler(rotation.eulerAngles.x, 0f, 0f);
+        transform.Rotate(0f, 146f, 0f);
         transform.localPosition = new Vector3(1, 1, 1);
     }
 

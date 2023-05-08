@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7926632107320453197}
   - component: {fileID: 9134231118828978931}
   - component: {fileID: 1141338093174208685}
+  - component: {fileID: -1119022237167023248}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -115,3 +116,19 @@ MonoBehaviour:
   passiveDrainSpeed: 1
   activeDrainSpeed: 0
   planted: 0
+--- !u!54 &-1119022237167023248
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4204929431817636717}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 1
