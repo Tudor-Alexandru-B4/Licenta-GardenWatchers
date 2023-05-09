@@ -9,6 +9,8 @@ public class WaterLife : MonoBehaviour
     public float activeDrainSpeed = 0;
     public bool planted = false;
 
+    WaterLevelDisplay levelDisplay = null;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,13 +24,18 @@ public class WaterLife : MonoBehaviour
         {
             currentWater -= (passiveDrainSpeed + activeDrainSpeed) * Time.deltaTime;
 
-            if(transform.childCount > 0)
+            if(levelDisplay == null)
             {
-                transform.GetChild(0).GetComponent<WaterLevelDisplay>().UpdateValue(currentWater, maxWater);
+                levelDisplay = GetWaterLevelDisplay();
+            }
+            else
+            {
+                levelDisplay.UpdateValue(currentWater, maxWater);
             }
 
             if (currentWater < 0)
             {
+                Destroy(levelDisplay.gameObject);
                 Destroy(gameObject);
             }
         }
@@ -66,5 +73,18 @@ public class WaterLife : MonoBehaviour
         activeDrainSpeed += value;
         yield return new WaitForSeconds(time);
         activeDrainSpeed -= value;
+    }
+
+    WaterLevelDisplay GetWaterLevelDisplay()
+    {
+        foreach(Transform child in transform.parent)
+        {
+            if (child.name.StartsWith("WaterLevelDisplay"))
+            {
+                return child.GetComponent<WaterLevelDisplay>();
+            }
+        }
+
+        return null;
     }
 }
