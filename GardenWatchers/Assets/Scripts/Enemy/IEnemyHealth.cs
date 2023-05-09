@@ -27,7 +27,7 @@ public class IEnemyHealth : MonoBehaviour
     public void TakeDamage(float damage)
     {
         currentHp -= damage;
-        if (currentHp < 0)
+        if (currentHp <= 0)
         {
             TryToDropSeed();
             Destroy(gameObject);

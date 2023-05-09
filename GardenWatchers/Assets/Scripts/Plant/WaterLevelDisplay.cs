@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class WaterLevelDisplay : MonoBehaviour
@@ -19,7 +17,7 @@ public class WaterLevelDisplay : MonoBehaviour
         Quaternion rotation = transform.rotation;
         transform.rotation = Quaternion.Euler(rotation.eulerAngles.x, 0f, 0f);
         transform.Rotate(0f, 146f, 0f);
-        transform.localPosition = new Vector3(1, 1, 1);
+        transform.localPosition = new Vector3(0.5f, 0.75f, 1f);
     }
 
     public void UpdateValue(float currentValue, float maxValue)

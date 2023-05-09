@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -50,8 +52,16 @@ public class Planting_Script : MonoBehaviour
             plant.transform.parent = planter.gameObject.transform;
             plant.gameObject.tag = "Plant";
             AddNavObstacle(plant);
-            Instantiate(waterLevelDisplayPrefab, plant.transform);
+            Instantiate(waterLevelDisplayPrefab, planter.transform);
             plant.gameObject.GetComponent<WaterLife>().planted = true;
+
+            List<IPlantAttack> plantAttacks = new List<IPlantAttack>();
+            RandomUtils.GetInterfaces<IPlantAttack>(out plantAttacks, plant);
+            if (plantAttacks.Count > 0)
+            {
+                plantAttacks[0].planted = true;
+            }
+
             return true;
         }
         return false;
@@ -107,8 +117,9 @@ public class Planting_Script : MonoBehaviour
     private void AddNavObstacle(GameObject plant)
     {
         var navObstacle = plant.AddComponent<NavMeshObstacle>();
-        navObstacle.shape = NavMeshObstacleShape.Box;
-        navObstacle.size = planter.transform.localScale;
+        navObstacle.shape = NavMeshObstacleShape.Capsule;
+        navObstacle.radius = 1;
         navObstacle.carving = true;
+        navObstacle.carveOnlyStationary = false;
     }
 }
