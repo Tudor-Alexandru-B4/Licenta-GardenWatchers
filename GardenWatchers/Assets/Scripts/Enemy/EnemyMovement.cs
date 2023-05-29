@@ -10,6 +10,8 @@ public class EnemyMovement : MonoBehaviour
     GameObject well;
     public bool canMove = true;
 
+    float stunTime = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +22,23 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(stunTime <= 0)
+        {
+            canMove = true;
+        }
+        else
+        {
+            stunTime -= Time.deltaTime;
+            canMove = false;
+        }
+
+        if (!canMove)
+        {
+            target = null;
+            agent.SetDestination(transform.position);
+            return;
+        }
+
         NavMeshPath navMeshPath = new NavMeshPath();
         if (agent.CalculatePath(well.transform.position, navMeshPath) && navMeshPath.status == NavMeshPathStatus.PathComplete)
         {
@@ -36,7 +55,10 @@ public class EnemyMovement : MonoBehaviour
             }
 
             target = ComputeClosestPlant(plants);
-            agent.SetDestination(target.transform.position);
+            if(target != null)
+            {
+                agent.SetDestination(target.transform.position);
+            }
         }
     }
 
@@ -47,6 +69,11 @@ public class EnemyMovement : MonoBehaviour
 
         foreach (GameObject p in plants)
         {
+            if (!p.GetComponent<WaterLife>().canBeAttacked)
+            {
+                continue;
+            }
+
             float distance = Mathf.Abs(Vector3.Distance(transform.position, p.transform.position));
             if (distance < minDistance)
             {
@@ -55,5 +82,13 @@ public class EnemyMovement : MonoBehaviour
             }
         }
         return closest;
+    }
+
+    public void AddStunTime(float time)
+    {
+        if(stunTime < time)
+        {
+            stunTime = time;
+        }
     }
 }

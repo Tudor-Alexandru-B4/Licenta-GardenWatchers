@@ -51,7 +51,12 @@ public class Planting_Script : MonoBehaviour
             GameObject plant = Instantiate(prefab, spawnPosition, Quaternion.identity);
             plant.transform.parent = planter.gameObject.transform;
             plant.gameObject.tag = "Plant";
-            AddNavObstacle(plant);
+
+            if (plant.GetComponent<WaterLife>().canBeAttacked)
+            {
+                AddNavObstacle(plant);
+            }
+
             Instantiate(waterLevelDisplayPrefab, planter.transform);
             plant.gameObject.GetComponent<WaterLife>().planted = true;
 

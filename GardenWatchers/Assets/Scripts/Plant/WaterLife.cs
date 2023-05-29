@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class WaterLife : MonoBehaviour
 {
+    public bool canBeAttacked = true;
     public float maxWater;
     public float currentWater;
     public float passiveDrainSpeed;

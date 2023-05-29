@@ -660,8 +660,8 @@ MonoBehaviour:
   plantDetector: {fileID: 504351590}
   pickUpDetector: {fileID: 44775869}
   seedList:
-  - {fileID: 4204929431817636717, guid: 43d7113ad1c35a74798be4542753ce91, type: 3}
-  - {fileID: 2027596686593616263, guid: e2667ef71cd278b4195a02b9fedeb040, type: 3}
+  - {fileID: 4204929431817636717, guid: c61e18a8e049e6845ad63c1ae0da3564, type: 3}
+  - {fileID: 4204929431817636717, guid: 5016a6e1a51c3c74cbe52b7fb1a04622, type: 3}
   seedIndex: 0
   pickUp: {fileID: 0}
 --- !u!1 &646186529
@@ -821,7 +821,7 @@ MonoBehaviour:
   plantDetector: {fileID: 1665743972}
   pickUpDetector: {fileID: 2088072236}
   seedList:
-  - {fileID: 4204929431817636717, guid: 43d7113ad1c35a74798be4542753ce91, type: 3}
+  - {fileID: 4204929431817636717, guid: 18746fecf09e97344975c6e1e3b282aa, type: 3}
   - {fileID: 2027596686593616263, guid: e2667ef71cd278b4195a02b9fedeb040, type: 3}
   seedIndex: 0
   pickUp: {fileID: 0}
@@ -2741,7 +2741,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8289499100563176136, guid: 9daa9705b4ba71f409867055fa066265, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.09
+      value: -11.42
       objectReference: {fileID: 0}
     - target: {fileID: 8289499100563176136, guid: 9daa9705b4ba71f409867055fa066265, type: 3}
       propertyPath: m_LocalPosition.y
