@@ -1,7 +1,5 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem.HID;
-using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class IPlantAttack : MonoBehaviour
 {
@@ -18,10 +16,8 @@ public class IPlantAttack : MonoBehaviour
     LayerMask mask;
     private void Start()
     {
-        var layermask1 = 1 << 2; //Bullet Layer
-        var layermask2 = 1 << 5; //Enemy Layer
-        var layermask3 = 1 << 9; //PlantLayer
-        mask = layermask1 | layermask2 | layermask3;
+        var layermask1 = 1 << 9; //Wall
+        mask = layermask1;
     }
     public void AddStunTime(float time)
     {
