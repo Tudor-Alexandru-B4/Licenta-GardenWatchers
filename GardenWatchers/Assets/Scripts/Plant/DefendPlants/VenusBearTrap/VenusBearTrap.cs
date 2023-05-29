@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -60,8 +61,15 @@ public class VenusBearTrap : IPlantAttack
                 if (enemyMovements.Count > 0)
                 {
                     enemyMovements[0].AddStunTime(stunTime);
+                    StartCoroutine(TeleportMiddle(enemyMovements[0].gameObject));
                 }
             }
         }
+    }
+
+    IEnumerator TeleportMiddle(GameObject obj)
+    {
+        yield return new WaitForSeconds(0.1f);
+        obj.transform.position = new Vector3(transform.position.x, 0.5f, transform.position.z);
     }
 }

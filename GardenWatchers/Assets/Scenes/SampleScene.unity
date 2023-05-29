@@ -662,6 +662,7 @@ MonoBehaviour:
   seedList:
   - {fileID: 4204929431817636717, guid: c61e18a8e049e6845ad63c1ae0da3564, type: 3}
   - {fileID: 4204929431817636717, guid: 5016a6e1a51c3c74cbe52b7fb1a04622, type: 3}
+  - {fileID: 2027596686593616263, guid: 2f2685e5a3c81174ba024685adb1857e, type: 3}
   seedIndex: 0
   pickUp: {fileID: 0}
 --- !u!1 &646186529
@@ -970,6 +971,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 407c15e6379849642bcf971fb3c29ffb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasThorns: 0
+  thornsDamage: 10
   attackCooldown: 7.5
   waterDrainDone: 10
   waterDrainTime: 1
@@ -998,7 +1001,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 734328088}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.1
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -1622,7 +1625,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1034052921}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.1
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -1740,6 +1743,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 407c15e6379849642bcf971fb3c29ffb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasThorns: 0
+  thornsDamage: 10
   attackCooldown: 7.5
   waterDrainDone: 10
   waterDrainTime: 1
@@ -2255,6 +2260,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 407c15e6379849642bcf971fb3c29ffb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasThorns: 0
+  thornsDamage: 10
   attackCooldown: 7.5
   waterDrainDone: 10
   waterDrainTime: 1
@@ -2283,7 +2290,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1263995651}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.1
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50

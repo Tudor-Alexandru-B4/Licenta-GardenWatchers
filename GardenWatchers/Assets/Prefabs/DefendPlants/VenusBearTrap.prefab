@@ -154,7 +154,7 @@ MonoBehaviour:
   attackStunTime: 0
   targets: []
   stunTime: 5
-  waitBeforeClose: 0.75
+  waitBeforeClose: 1
   closedAfterStunTime: 2
   closed: 0
   closedScale: {x: 1.5, y: 0.75, z: 1.5}

@@ -62,13 +62,13 @@ public class Action_Script : MonoBehaviour
 
         if (Input.GetButtonDown(seedLeft))
         {
-            seedIndex = Math.Abs((seedIndex - 1) % seedList.Count);
+            seedIndex = Math.Abs(Modulo((seedIndex - 1), seedList.Count));
             farmLandDetector.UpdateShadow();
         }
 
         if (Input.GetButtonDown(seedRight))
         {
-            seedIndex = Math.Abs((seedIndex + 1) % seedList.Count);
+            seedIndex = Math.Abs(Modulo((seedIndex + 1), seedList.Count));
             farmLandDetector.UpdateShadow();
         }
     }
@@ -79,5 +79,10 @@ public class Action_Script : MonoBehaviour
         pickUp.transform.parent = gameObject.transform.parent;
         pickUp = null;
         farmLandDetector.UpdateShadow();
+    }
+
+    private int Modulo(int a, int b)
+    {
+        return (a % b + b) % b;
     }
 }

@@ -1,7 +1,10 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class IEnemyAttack : MonoBehaviour
 {
+    public bool hasThorns;
+    public float thornsDamage = 10;
     public float attackCooldown;
     public float waterDrainDone;
     public float waterDrainTime;
@@ -14,6 +17,19 @@ public class IEnemyAttack : MonoBehaviour
         if(attackStunTime < time)
         {
             attackStunTime = time;
+        }
+    }
+
+    public void TrySelfDamage()
+    {
+        if (hasThorns)
+        {
+            List<IEnemyHealth> enemyHealths = new List<IEnemyHealth>();
+            RandomUtils.GetInterfaces<IEnemyHealth>(out enemyHealths, gameObject);
+            if (enemyHealths.Count > 0)
+            {
+                enemyHealths[0].TakeDamage(waterDrainDone * 10 / 100);
+            }
         }
     }
 

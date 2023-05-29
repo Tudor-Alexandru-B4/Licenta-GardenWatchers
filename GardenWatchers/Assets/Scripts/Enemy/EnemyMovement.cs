@@ -34,9 +34,14 @@ public class EnemyMovement : MonoBehaviour
 
         if (!canMove)
         {
+            agent.radius = 0.1f;
             target = null;
             agent.SetDestination(transform.position);
             return;
+        }
+        else
+        {
+            agent.radius = 0.5f;
         }
 
         NavMeshPath navMeshPath = new NavMeshPath();
