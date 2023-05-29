@@ -1,9 +1,13 @@
 using UnityEngine;
 
-public class BasicPlantAttack : IPlantAttack
+public class FireSpittingPlantAttack : IPlantAttack
 {
-    public GameObject bullet;
+    public GameObject fireBullet;
     public float bulletSpeed;
+
+    public float fireTicDamage;
+    public float timeBetweenFireTics;
+    public float fireDuration;
 
     // Update is called once per frame
     void Update()
@@ -22,7 +26,7 @@ public class BasicPlantAttack : IPlantAttack
             attackStunTime = 0;
         }
 
-        if(targets.Count > 0)
+        if (targets.Count > 0)
         {
             Debug.Log(targets.Count);
             TryToAttack(ComputeClosestEnemy(targets));
@@ -39,8 +43,14 @@ public class BasicPlantAttack : IPlantAttack
 
         transform.rotation = Quaternion.LookRotation(target.transform.position - transform.position, transform.up);
 
-        GameObject bulletGameObject = Instantiate(bullet, transform.position, transform.rotation);
-        bulletGameObject.GetComponent<BasicBullet>().damage = damage;
+        GameObject bulletGameObject = Instantiate(fireBullet, transform.position, transform.rotation);
+        
+        var bulletComponent = bulletGameObject.GetComponent<FireSpittingBullet>();
+        bulletComponent.damage = damage;
+        bulletComponent.fireDuration = fireDuration;
+        bulletComponent.timeBetweenFireTics = timeBetweenFireTics;
+        bulletComponent.fireTicDamage = fireTicDamage;
+
         bulletGameObject.gameObject.GetComponent<Rigidbody>().AddForce(transform.forward * bulletSpeed);
         AddStunTime(attackCooldown);
     }
