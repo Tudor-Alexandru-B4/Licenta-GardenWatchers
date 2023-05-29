@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CactusSpikeTrap : IPlantAttack
+public class VenusBearTrap : IPlantAttack
 {
     public float stunTime;
     public float waitBeforeClose;
@@ -22,9 +22,9 @@ public class CactusSpikeTrap : IPlantAttack
     // Update is called once per frame
     void Update()
     {
-        if(!closed && targets.Count > 0)
+        if (!closed && targets.Count > 0)
         {
-            if(waitBeforeCloseTimer >= waitBeforeClose)
+            if (waitBeforeCloseTimer >= waitBeforeClose)
             {
                 transform.localScale = closedScale;
                 StunTargets();
@@ -38,7 +38,7 @@ public class CactusSpikeTrap : IPlantAttack
             }
         }
 
-        if(closedTime <= 0 && closed)
+        if (closedTime <= 0 && closed)
         {
             transform.localScale = openScale;
             closed = false;
@@ -64,5 +64,4 @@ public class CactusSpikeTrap : IPlantAttack
             }
         }
     }
-
 }
