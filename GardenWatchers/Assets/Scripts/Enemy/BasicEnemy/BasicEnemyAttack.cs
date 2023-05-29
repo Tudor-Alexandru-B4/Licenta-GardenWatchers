@@ -25,5 +25,6 @@ public class BasicEnemyAttack : IEnemyAttack
 
         target.GetComponent<WaterLife>().AddToActiveDrainTimed(waterDrainDone, waterDrainTime);
         AddStunTime(attackCooldown);
+        TrySelfDamage();
     }
 }
