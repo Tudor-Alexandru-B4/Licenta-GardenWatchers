@@ -111,6 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd9556f91638dce418edcb780dcd77a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canBeAttacked: 1
   maxWater: 500
   currentWater: 0
   passiveDrainSpeed: 1

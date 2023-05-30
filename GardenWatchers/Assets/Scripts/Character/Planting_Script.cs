@@ -92,6 +92,17 @@ public class Planting_Script : MonoBehaviour
             plantShowing.gameObject.name = "shadowPlant";
             var oldColor = plantShowing.GetComponent<Renderer>().material.color;
             plantShowing.GetComponent<Renderer>().material.color = new Color(oldColor.r, oldColor.g, oldColor.b, 0.5f);
+
+            foreach(Transform child in plantShowing.transform)
+            {
+                if (!child.gameObject.GetComponent<Renderer>())
+                {
+                    continue;
+                }
+                oldColor = child.gameObject.GetComponent<Renderer>().material.color;
+                child.gameObject.GetComponent<Renderer>().material.color = new Color(oldColor.r, oldColor.g, oldColor.b, 0.5f);
+            }
+
             plantShowing.transform.parent = planter.gameObject.transform;
         }
     }
