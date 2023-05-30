@@ -4,7 +4,7 @@ using UnityEngine;
 public class IEnemyAttack : MonoBehaviour
 {
     public bool hasThorns;
-    public float thornsDamage = 10;
+    public float thornsDamagePercent = 10;
     public float attackCooldown;
     public float waterDrainDone;
     public float waterDrainTime;
@@ -28,7 +28,7 @@ public class IEnemyAttack : MonoBehaviour
             RandomUtils.GetInterfaces<IEnemyHealth>(out enemyHealths, gameObject);
             if (enemyHealths.Count > 0)
             {
-                enemyHealths[0].TakeDamage(waterDrainDone * 10 / 100);
+                enemyHealths[0].TakeDamage(waterDrainDone * thornsDamagePercent / 100);
             }
         }
     }
