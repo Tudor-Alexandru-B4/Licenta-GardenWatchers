@@ -5,12 +5,13 @@ using UnityEngine.AI;
 
 public class EnemyMovement : MonoBehaviour
 {
-    NavMeshAgent agent;
+    public NavMeshAgent agent;
     public GameObject target = null;
     GameObject well;
     public bool canMove = true;
+    public bool isSlowed = false;
 
-    float stunTime = 0;
+    float stunTime = -0.5f;
 
     // Start is called before the first frame update
     void Start()
@@ -22,26 +23,23 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(stunTime <= 0)
+        if(stunTime < 0)
         {
+            StartCollider();
             canMove = true;
         }
-        else
+        else if(stunTime > 0)
         {
+            StopCollider();
             stunTime -= Time.deltaTime;
             canMove = false;
         }
 
         if (!canMove)
         {
-            agent.radius = 0.1f;
             target = null;
             agent.SetDestination(transform.position);
             return;
-        }
-        else
-        {
-            agent.radius = 0.5f;
         }
 
         NavMeshPath navMeshPath = new NavMeshPath();
@@ -96,4 +94,15 @@ public class EnemyMovement : MonoBehaviour
             stunTime = time;
         }
     }
+
+    public void StopCollider()
+    {
+        agent.radius = 0.1f;
+    }
+
+    public void StartCollider()
+    {
+        agent.radius = 0.5f;
+    }
+
 }
