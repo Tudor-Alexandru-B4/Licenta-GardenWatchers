@@ -547,6 +547,7 @@ MonoBehaviour:
   - {fileID: 4204929431817636717, guid: c61e18a8e049e6845ad63c1ae0da3564, type: 3}
   - {fileID: 4204929431817636717, guid: 5016a6e1a51c3c74cbe52b7fb1a04622, type: 3}
   - {fileID: 2027596686593616263, guid: 2f2685e5a3c81174ba024685adb1857e, type: 3}
+  - {fileID: 4204929431817636717, guid: 1f0f0b49b2431994390f8cf9fe098348, type: 3}
   seedIndex: 0
   pickUp: {fileID: 0}
 --- !u!1 &646186529
