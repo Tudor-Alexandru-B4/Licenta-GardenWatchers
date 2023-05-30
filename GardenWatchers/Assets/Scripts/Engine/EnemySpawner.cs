@@ -34,6 +34,14 @@ public class EnemySpawner : MonoBehaviour
         bounds = GetComponent<BoxCollider>().bounds;
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Minus))
+        {
+            SpawnWave();
+        }
+    }
+
     [Button]
     public void SpawnWave()
     {
