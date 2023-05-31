@@ -1,9 +1,10 @@
 using UnityEngine;
 
-public class BasicPlantAttack : IPlantAttack
+public class DirtTosserAttack : IPlantAttack
 {
     public GameObject bullet;
     public float bulletSpeed;
+    public float impactRadius = 2.5f;
 
     // Update is called once per frame
     void Update()
@@ -22,9 +23,9 @@ public class BasicPlantAttack : IPlantAttack
             attackStunTime = 0;
         }
 
-        if(targets.Count > 0)
+        if (targets.Count > 0)
         {
-            TryToAttack(ComputeClosestEnemy(targets));
+            TryToAttack(ComputeFarthestEnemy(targets, false));
         }
     }
 
@@ -39,8 +40,11 @@ public class BasicPlantAttack : IPlantAttack
         transform.rotation = Quaternion.LookRotation(target.transform.position - transform.position, transform.up);
 
         GameObject bulletGameObject = Instantiate(bullet, transform.position, transform.rotation);
-        bulletGameObject.GetComponent<BasicBullet>().damage = damage;
-        bulletGameObject.gameObject.GetComponent<Rigidbody>().AddForce(transform.forward * bulletSpeed);
+        var dirtTosser = bulletGameObject.GetComponent<DirtTosserBullet>();
+        dirtTosser.damage = damage;
+        dirtTosser.impactRadius = impactRadius;
+        dirtTosser.target = target;
+        dirtTosser.bulletSpeed = bulletSpeed;
         AddStunTime(attackCooldown);
     }
 }

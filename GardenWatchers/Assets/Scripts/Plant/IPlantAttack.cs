@@ -29,7 +29,7 @@ public class IPlantAttack : MonoBehaviour
 
     public virtual void TryToAttack(GameObject enemy) { }
 
-    public GameObject ComputeClosestEnemy(List<GameObject> enemies)
+    public GameObject ComputeClosestEnemy(List<GameObject> enemies, bool checkLOS = true)
     {
         float minDistance = Mathf.Infinity;
         GameObject closest = null;
@@ -46,11 +46,13 @@ public class IPlantAttack : MonoBehaviour
                 continue;
             }
 
-            if(Physics.Linecast(transform.position, e.transform.position, mask))
+            if (checkLOS)
             {
-                continue;
+                if (Physics.Linecast(transform.position, e.transform.position, mask))
+                {
+                    continue;
+                }
             }
-            
 
             float distance = Mathf.Abs(Vector3.Distance(transform.position, e.transform.position));
             if (distance < minDistance)
@@ -60,5 +62,40 @@ public class IPlantAttack : MonoBehaviour
             }
         }
         return closest;
+    }
+
+    public GameObject ComputeFarthestEnemy(List<GameObject> enemies, bool checkLOS = true)
+    {
+        float maxDistance = -Mathf.Infinity;
+        GameObject farthest = null;
+        List<GameObject> enemiesTemp = new List<GameObject>(enemies);
+
+        foreach (GameObject e in enemiesTemp)
+        {
+            if (!e)
+            {
+                if (enemies.Contains(e))
+                {
+                    enemies.Remove(e);
+                }
+                continue;
+            }
+
+            if (checkLOS)
+            {
+                if (Physics.Linecast(transform.position, e.transform.position, mask))
+                {
+                    continue;
+                }
+            }
+
+            float distance = Mathf.Abs(Vector3.Distance(transform.position, e.transform.position));
+            if (distance > maxDistance)
+            {
+                maxDistance = distance;
+                farthest = e;
+            }
+        }
+        return farthest;
     }
 }
