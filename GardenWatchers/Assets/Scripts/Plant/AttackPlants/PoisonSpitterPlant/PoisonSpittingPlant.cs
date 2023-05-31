@@ -29,7 +29,6 @@ public class PoisonSpittingPlant : IPlantAttack
 
         if (targets.Count > 0)
         {
-            Debug.Log(targets.Count);
             TryToAttack(ComputeClosestEnemy(targets));
         }
     }
