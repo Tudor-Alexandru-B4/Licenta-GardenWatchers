@@ -712,6 +712,7 @@ MonoBehaviour:
   - {fileID: 2027596686593616263, guid: e2667ef71cd278b4195a02b9fedeb040, type: 3}
   - {fileID: 2027596686593616263, guid: a32995fd647b8344ebb5c7279dcd4192, type: 3}
   - {fileID: 4204929431817636717, guid: b94fa4b9ad97e5743a4d995bdc07ad96, type: 3}
+  - {fileID: 4204929431817636717, guid: b46e952da4158544cba638b013628365, type: 3}
   seedIndex: 0
   pickUp: {fileID: 0}
 --- !u!1 &705507993
