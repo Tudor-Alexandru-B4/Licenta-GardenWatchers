@@ -207,7 +207,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8289499100563176136, guid: 9daa9705b4ba71f409867055fa066265, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8289499100563176136, guid: 9daa9705b4ba71f409867055fa066265, type: 3}
       propertyPath: m_LocalPosition.x
@@ -268,7 +268,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7215489587510392371, guid: 31f71b29f80f73c44818682a53a89cff, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7215489587510392371, guid: 31f71b29f80f73c44818682a53a89cff, type: 3}
       propertyPath: m_LocalPosition.x
@@ -490,7 +490,7 @@ Transform:
   - {fileID: 504351589}
   - {fileID: 44775866}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &577874395
 Rigidbody:
@@ -540,6 +540,7 @@ MonoBehaviour:
   pick: PickUp
   seedRight: RightSeed
   seedLeft: LeftSeed
+  ability: Ability
   farmLandDetector: {fileID: 1096054469}
   plantDetector: {fileID: 504351590}
   pickUpDetector: {fileID: 44775869}
@@ -550,6 +551,10 @@ MonoBehaviour:
   - {fileID: 4204929431817636717, guid: 1f0f0b49b2431994390f8cf9fe098348, type: 3}
   - {fileID: 4204929431817636717, guid: f049f047f2bd9f3458cdc3e1e4f99f5a, type: 3}
   seedIndex: 0
+  abilityPrefab: {fileID: 4978188310220605231, guid: 719bd6a34a18b7449be30db66dc0fcf0, type: 3}
+  ability2Prefab: {fileID: 0}
+  abilityCooldown: 0
+  ability2Cooldown: 0
   pickUp: {fileID: 0}
 --- !u!1 &646186529
 GameObject:
@@ -654,7 +659,7 @@ Transform:
   - {fileID: 1665743975}
   - {fileID: 2088072233}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &646186535
 Rigidbody:
@@ -704,6 +709,7 @@ MonoBehaviour:
   pick: PickUp
   seedRight: RightSeed
   seedLeft: LeftSeed
+  ability: Ability
   farmLandDetector: {fileID: 1137459033}
   plantDetector: {fileID: 1665743972}
   pickUpDetector: {fileID: 2088072236}
@@ -714,6 +720,10 @@ MonoBehaviour:
   - {fileID: 4204929431817636717, guid: b94fa4b9ad97e5743a4d995bdc07ad96, type: 3}
   - {fileID: 4204929431817636717, guid: b46e952da4158544cba638b013628365, type: 3}
   seedIndex: 0
+  abilityPrefab: {fileID: 4978188310220605231, guid: 719bd6a34a18b7449be30db66dc0fcf0, type: 3}
+  ability2Prefab: {fileID: 0}
+  abilityCooldown: 10
+  ability2Cooldown: 0
   pickUp: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
@@ -807,7 +817,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!43 &796767371
 Mesh:
@@ -982,7 +992,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8289499100563176136, guid: 9daa9705b4ba71f409867055fa066265, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8289499100563176136, guid: 9daa9705b4ba71f409867055fa066265, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1125,7 +1135,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &963194225
 GameObject:
@@ -1765,7 +1775,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7215489587510392371, guid: 31f71b29f80f73c44818682a53a89cff, type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 7215489587510392371, guid: 31f71b29f80f73c44818682a53a89cff, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1924,7 +1934,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8289499100563176136, guid: 9daa9705b4ba71f409867055fa066265, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8289499100563176136, guid: 9daa9705b4ba71f409867055fa066265, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2493,7 +2503,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7215489587510392371, guid: 31f71b29f80f73c44818682a53a89cff, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7215489587510392371, guid: 31f71b29f80f73c44818682a53a89cff, type: 3}
       propertyPath: m_LocalPosition.x
