@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3415411848030864927}
   - component: {fileID: 1969203420387745508}
   - component: {fileID: 6485356509307044483}
+  - component: {fileID: 2622591233807113631}
   m_Layer: 0
   m_Name: Seed
   m_TagString: PickUp
@@ -97,3 +98,15 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2622591233807113631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1232252046988495515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f291da40f6bdff444b1844ad2e82f910, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

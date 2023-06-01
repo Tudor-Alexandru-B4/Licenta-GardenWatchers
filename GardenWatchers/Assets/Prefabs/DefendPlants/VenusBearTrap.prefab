@@ -169,7 +169,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3520454502163586372}
   - component: {fileID: 4648306587079210126}
-  - component: {fileID: 6861142468310515194}
+  - component: {fileID: 1682733410173177286}
   m_Layer: 10
   m_Name: EnemyChecker
   m_TagString: Untagged
@@ -204,8 +204,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8626d1ab1c2881a47a9d8ab880e9716f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!135 &6861142468310515194
-SphereCollider:
+--- !u!65 &1682733410173177286
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -215,5 +215,5 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.75
+  m_Size: {x: 1.0379806, y: 1.0379806, z: 1.0379806}
   m_Center: {x: 0, y: 0, z: 0}
