@@ -552,9 +552,9 @@ MonoBehaviour:
   - {fileID: 4204929431817636717, guid: f049f047f2bd9f3458cdc3e1e4f99f5a, type: 3}
   seedIndex: 0
   abilityPrefab: {fileID: 4978188310220605231, guid: 719bd6a34a18b7449be30db66dc0fcf0, type: 3}
-  ability2Prefab: {fileID: 0}
-  abilityCooldown: 0
-  ability2Cooldown: 0
+  ability2Prefab: {fileID: 3253571922187439124, guid: e2626033780d58244a5487b56f1e82de, type: 3}
+  abilityCooldown: 10
+  ability2Cooldown: 30
   pickUp: {fileID: 0}
 --- !u!1 &646186529
 GameObject:
@@ -721,9 +721,9 @@ MonoBehaviour:
   - {fileID: 4204929431817636717, guid: b46e952da4158544cba638b013628365, type: 3}
   seedIndex: 0
   abilityPrefab: {fileID: 4978188310220605231, guid: 719bd6a34a18b7449be30db66dc0fcf0, type: 3}
-  ability2Prefab: {fileID: 0}
+  ability2Prefab: {fileID: 3253571922187439124, guid: e2626033780d58244a5487b56f1e82de, type: 3}
   abilityCooldown: 10
-  ability2Cooldown: 0
+  ability2Cooldown: 30
   pickUp: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
