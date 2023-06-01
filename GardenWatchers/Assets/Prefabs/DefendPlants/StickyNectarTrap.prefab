@@ -241,8 +241,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3520454502163586372}
-  - component: {fileID: 6861142468310515194}
   - component: {fileID: 2758131994788730886}
+  - component: {fileID: 2367181511069862971}
   m_Layer: 10
   m_Name: EnemyChecker
   m_TagString: Untagged
@@ -265,19 +265,6 @@ Transform:
   m_Father: {fileID: 7887122857291025193}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &6861142468310515194
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5565871906009955013}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.75
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &2758131994788730886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -291,3 +278,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemySpeedDebuf: 3
+--- !u!65 &2367181511069862971
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5565871906009955013}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.1360402, y: 1.1360402, z: 1.1360402}
+  m_Center: {x: 0, y: 0, z: 0}
