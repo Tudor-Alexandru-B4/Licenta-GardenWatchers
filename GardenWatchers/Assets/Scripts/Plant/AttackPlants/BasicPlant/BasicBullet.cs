@@ -7,7 +7,7 @@ public class BasicBullet : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "Enemy")
+        if(collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "EnemyShield")
         {
             List<IEnemyHealth> enemyHealths = new List<IEnemyHealth>();
             RandomUtils.GetInterfaces<IEnemyHealth>(out enemyHealths, collision.gameObject);

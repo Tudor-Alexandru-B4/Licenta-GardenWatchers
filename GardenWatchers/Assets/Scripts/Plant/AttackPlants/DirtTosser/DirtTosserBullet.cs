@@ -38,6 +38,17 @@ public class DirtTosserBullet : MonoBehaviour
             return;
         }
 
+        if(collision.gameObject.tag == "EnemyShield")
+        {
+            List<IEnemyHealth> enemyHealths = new List<IEnemyHealth>();
+            RandomUtils.GetInterfaces<IEnemyHealth>(out enemyHealths, collision.gameObject);
+            if (enemyHealths.Count > 0)
+            {
+                enemyHealths[0].TakeDamage(damage);
+            }
+            Destroy(gameObject);
+        }
+
         var tags = new List<string>() { "Enemy", "Ground" };
         if (tags.Contains(collision.gameObject.tag))
         {

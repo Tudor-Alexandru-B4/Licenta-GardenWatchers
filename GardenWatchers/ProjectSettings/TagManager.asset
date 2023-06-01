@@ -10,6 +10,7 @@ TagManager:
   - Well
   - Enemy
   - Wall
+  - EnemyShield
   layers:
   - Default
   - TransparentFX

@@ -16,7 +16,7 @@ public class BlackTar : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Enemy")
+        if(other.tag == "Enemy" || other.gameObject.tag == "EnemyShield")
         {
             List<IEnemyHealth> enemyHealths = new List<IEnemyHealth>();
             RandomUtils.GetInterfaces<IEnemyHealth>(out enemyHealths, other.gameObject);
