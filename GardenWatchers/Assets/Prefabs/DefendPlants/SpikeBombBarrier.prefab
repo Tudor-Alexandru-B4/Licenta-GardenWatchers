@@ -425,7 +425,7 @@ GameObject:
   - component: {fileID: 8272962495701037326}
   - component: {fileID: 8583723540779332604}
   - component: {fileID: 2299006424600876893}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: SpikeRange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
