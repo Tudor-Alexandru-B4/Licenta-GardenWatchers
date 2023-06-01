@@ -9,6 +9,7 @@ public class Action_Script : MonoBehaviour
     public string pick;
     public string seedRight;
     public string seedLeft;
+    public string ability = "Ability";
 
     public Planting_Script farmLandDetector;
     public Watering_Script plantDetector;
@@ -16,12 +17,24 @@ public class Action_Script : MonoBehaviour
     public List<GameObject> seedList;
     public int seedIndex = 0;
 
+    public GameObject abilityPrefab;
+    public GameObject ability2Prefab;
+    public float abilityCooldown;
+    public float ability2Cooldown;
+
+    GameObject currentAbilityPrefab;
+    float currentAbilityCooldown;
+    float cooldown = 0f;
+
     public GameObject pickUp = null;
-    
+
     // Start is called before the first frame update
     void Start()
     {
-        if(player == "2")
+        currentAbilityPrefab = abilityPrefab;
+        currentAbilityCooldown = abilityCooldown;
+
+        if (player == "2")
         {
             var movement = gameObject.GetComponent<Movement_Script>();
             movement.horizontal = movement.horizontal + "2";
@@ -30,12 +43,30 @@ public class Action_Script : MonoBehaviour
             pick = pick + "2";
             seedRight = seedRight + "2";
             seedLeft = seedLeft + "2";
+            ability = ability + "2";
+            currentAbilityPrefab = ability2Prefab;
+            currentAbilityCooldown = ability2Cooldown;
         }
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetButtonDown(ability))
+        {
+            if(cooldown <= 0f)
+            {
+                var abilityObj = Instantiate(currentAbilityPrefab, transform.position, Quaternion.identity);
+                abilityObj.transform.parent = transform.parent;
+                cooldown = currentAbilityCooldown;
+            }
+        }
+
+        if(cooldown >= 0f)
+        {
+            cooldown -= Time.deltaTime;
+        }
+
         if (Input.GetButtonDown(pick))
         {
             if (pickUpDetector.TryToPickUp())
