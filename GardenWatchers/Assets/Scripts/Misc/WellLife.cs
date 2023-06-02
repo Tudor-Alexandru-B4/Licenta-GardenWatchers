@@ -2,20 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class WellLife : MonoBehaviour
 {
     public float maxWater;
     public float currentWater;
     public float activeDrainSpeed = 0;
+    Slider slider;
 
     void Start()
     {
         currentWater = maxWater;
+        slider = GameObject.Find("WellHealth").GetComponent<Slider>();
     }
 
     void Update()
     {
+        slider.value = currentWater;
         currentWater -= activeDrainSpeed * Time.deltaTime;
 
         if(currentWater < 0)
