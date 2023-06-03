@@ -24,6 +24,7 @@ public class EnemyWavesUI : MonoBehaviour
     TextMeshProUGUI enemiesText;
 
     bool gotNext = false;
+    NextWaveStart waveStart;
 
     private void Start()
     {
@@ -51,6 +52,8 @@ public class EnemyWavesUI : MonoBehaviour
 
         counterText = GameObject.Find("RemainingWaves - Text").GetComponent<TextMeshProUGUI>();
         enemiesText = gameObject.GetComponent<TextMeshProUGUI>();
+
+        waveStart = GameObject.Find("StartWaveArea").GetComponent<NextWaveStart>();
     }
 
     private void Update()
@@ -75,6 +78,7 @@ public class EnemyWavesUI : MonoBehaviour
         {
             if (!gotNext)
             {
+                waveStart.waveOngoing = false;
                 ShowNextWaveEnemies();
                 gotNext = true;
             }
