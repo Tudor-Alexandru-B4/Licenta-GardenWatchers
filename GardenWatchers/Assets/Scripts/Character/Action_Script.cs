@@ -23,16 +23,26 @@ public class Action_Script : MonoBehaviour
     public float ability2Cooldown;
 
     GameObject currentAbilityPrefab;
-    float currentAbilityCooldown;
-    float cooldown = 0f;
+    [NonSerialized]
+    public float currentAbilityCooldown = -1;
+    [NonSerialized]
+    public float cooldown = 0f;
 
     public GameObject pickUp = null;
 
     // Start is called before the first frame update
     void Start()
     {
-        currentAbilityPrefab = abilityPrefab;
-        currentAbilityCooldown = abilityCooldown;
+        if(gameObject.name == "Player_Defensive")
+        {
+            currentAbilityPrefab = abilityPrefab;
+            currentAbilityCooldown = abilityCooldown;
+        }
+        else
+        {
+            currentAbilityPrefab = ability2Prefab;
+            currentAbilityCooldown = ability2Cooldown;
+        }
 
         if (player == "2")
         {
@@ -44,8 +54,6 @@ public class Action_Script : MonoBehaviour
             seedRight = seedRight + "2";
             seedLeft = seedLeft + "2";
             ability = ability + "2";
-            currentAbilityPrefab = ability2Prefab;
-            currentAbilityCooldown = ability2Cooldown;
         }
     }
 

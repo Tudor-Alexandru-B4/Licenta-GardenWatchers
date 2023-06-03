@@ -28,6 +28,7 @@ public class EnemySpawner : MonoBehaviour
     public int currentWaveToSpawn = 0;
 
     Bounds bounds;
+    List<GameObject> enemyiesSpawned = new List<GameObject>();
 
     private void Start()
     {
@@ -51,7 +52,7 @@ public class EnemySpawner : MonoBehaviour
         }
 
         var wave = enemyWaves.waves[currentWaveToSpawn].enemyList;
-
+        enemyiesSpawned.Clear();
         foreach(var pair in wave)
         {
             for(int i = 0; i <  pair.value; i++)
@@ -68,6 +69,7 @@ public class EnemySpawner : MonoBehaviour
         float offsetZ = Random.Range(-bounds.extents.z, bounds.extents.z);
 
         var spawnedEnemy = Instantiate(enemy, bounds.center + new Vector3(offsetX, 1f, offsetZ), Quaternion.identity);
+        enemyiesSpawned.Add(spawnedEnemy);
     }
     
 }

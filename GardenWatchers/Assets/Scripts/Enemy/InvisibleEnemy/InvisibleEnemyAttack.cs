@@ -39,7 +39,14 @@ public class InvisibleEnemyAttack : IEnemyAttack
 
         collider.enabled = true;
         mesh.enabled = true;
-        target.GetComponent<WaterLife>().AddToActiveDrainTimed(waterDrainDone, waterDrainTime);
+        if (target.tag == "Well")
+        {
+            target.GetComponent<WellLife>().AddToActiveDrainTimed(waterDrainDone, waterDrainTime);
+        }
+        else
+        {
+            target.GetComponent<WaterLife>().AddToActiveDrainTimed(waterDrainDone, waterDrainTime);
+        }
         AddStunTime(attackCooldown);
         TrySelfDamage();
     }

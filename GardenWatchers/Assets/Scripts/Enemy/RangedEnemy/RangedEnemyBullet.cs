@@ -13,6 +13,12 @@ public class RangedEnemyBullet : MonoBehaviour
             Destroy(gameObject);
         }
 
+        if(other.gameObject.tag == "Well")
+        {
+            other.gameObject.GetComponent<WellLife>().AddToActiveDrainTimed(waterDrainDone, waterDrainTime);
+            Destroy(gameObject);
+        }
+
         if (other.gameObject.tag == "Wall" || other.gameObject.tag == "Ground")
         {
             Destroy(gameObject);

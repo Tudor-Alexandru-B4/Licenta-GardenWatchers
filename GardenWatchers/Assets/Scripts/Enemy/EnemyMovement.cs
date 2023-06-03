@@ -46,6 +46,7 @@ public class EnemyMovement : MonoBehaviour
         if (agent.CalculatePath(well.transform.position, navMeshPath) && navMeshPath.status == NavMeshPathStatus.PathComplete)
         {
             agent.SetPath(navMeshPath);
+            target = well;
         }
         else
         {
