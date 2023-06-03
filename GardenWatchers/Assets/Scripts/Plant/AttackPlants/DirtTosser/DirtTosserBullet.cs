@@ -28,7 +28,14 @@ public class DirtTosserBullet : MonoBehaviour
     {
         speed += Time.deltaTime;
 
-        transform.position = Parabola(startPosition, target.transform.position, Vector3.Distance(startPosition, target.transform.position) / 3, speed * bulletSpeed);
+        if (target)
+        {
+            transform.position = Parabola(startPosition, target.transform.position, Vector3.Distance(startPosition, target.transform.position) / 3, speed * bulletSpeed);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void OnCollisionEnter(Collision collision)

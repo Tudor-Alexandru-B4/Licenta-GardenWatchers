@@ -41,7 +41,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5103702103615663339}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -58,6 +58,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 877a9bd2bceea284aa281138484e75a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyTypes:
+  - {fileID: 1776156094602467045, guid: fd8a49fe5e794784daea1dcdb39855e4, type: 3}
+  - {fileID: 1776156094602467045, guid: e5f31434689a5c047bea63ac72bf37e6, type: 3}
+  - {fileID: 1776156094602467045, guid: e86361a304d83a94ba8d9030c3cb9f1f, type: 3}
+  - {fileID: 1776156094602467045, guid: 578084224c5326c4eae04eb4918cc6d2, type: 3}
+  - {fileID: 1776156094602467045, guid: 6110f3d103533db4b8e138bd8fda4c4e, type: 3}
   enemyWaves:
     waves: []
   currentWaveToSpawn: 0
