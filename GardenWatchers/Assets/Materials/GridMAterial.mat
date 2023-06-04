@@ -25,7 +25,7 @@ Material:
     - _BUILTIN_QueueControl: 0
     - _BUILTIN_QueueOffset: 0
     - _LineThickness: 0.9
-    - _TileAmount: 31
+    - _TileAmount: 22
     m_Colors:
     - _Color: {r: 0, g: 0.41552728, b: 1, a: 0}
   m_BuildTextureStacks: []
