@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class StringPair
 {
@@ -61,15 +62,18 @@ public class EnemyWavesUI : MonoBehaviour
         int currentWave = enemySpawners[0].currentWaveToSpawn;
         counterText.text = currentWave.ToString() + " / " + maxWaves;
 
-        if(currentWave == maxWaves)
+        var spawnedEnemies = new List<GameObject>(GameObject.FindGameObjectsWithTag("Enemy"));
+
+        if (currentWave == maxWaves)
         {
-            //implement next level or something
+            if(spawnedEnemies.Count <= 0)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            }
             return;
         }
 
-        var spawnedEnemies = new List<GameObject>(GameObject.FindGameObjectsWithTag("Enemy"));
-
-        if(spawnedEnemies.Count > 0 )
+        if (spawnedEnemies.Count > 0 )
         {
             ShowCurrentEnemies(spawnedEnemies);
             gotNext = false;

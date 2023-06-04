@@ -15,9 +15,19 @@ public class Planting_Script : MonoBehaviour
         playerAction = gameObject.transform.parent.GetComponent<Action_Script>();
     }
 
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.tag == "FarmLand" && planter == null && planter != other.gameObject)
+        {
+            planter = other.gameObject;
+
+            UpdateShadow();
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "FarmLand")
+        if (other.gameObject.tag == "FarmLand" && planter == null)
         {
             planter = other.gameObject;
 
