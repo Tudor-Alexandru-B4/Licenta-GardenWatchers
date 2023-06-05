@@ -35,11 +35,13 @@ public class Action_Script : MonoBehaviour
     {
         if(gameObject.name == "Player_Defensive")
         {
+            player = GameObject.Find("Settings").GetComponent<SettingsScript>().defender.ToString();
             currentAbilityPrefab = abilityPrefab;
             currentAbilityCooldown = abilityCooldown;
         }
         else
         {
+            player = GameObject.Find("Settings").GetComponent<SettingsScript>().attacker.ToString();
             currentAbilityPrefab = ability2Prefab;
             currentAbilityCooldown = ability2Cooldown;
         }

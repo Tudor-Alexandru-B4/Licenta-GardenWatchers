@@ -1195,6 +1195,7 @@ GameObject:
   - component: {fileID: 4422751785302099593}
   - component: {fileID: 4422751785302099594}
   - component: {fileID: 2333179500619864167}
+  - component: {fileID: 8735481186071331588}
   m_Layer: 5
   m_Name: WavesEnemies - Text
   m_TagString: Untagged
@@ -1439,6 +1440,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &8735481186071331588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4422751785302099596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af57f09486d80db41ae20662583233b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4422751785514994964
 GameObject:
   m_ObjectHideFlags: 0
