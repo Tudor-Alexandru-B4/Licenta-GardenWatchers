@@ -78,6 +78,11 @@ public class EnemyMovement : MonoBehaviour
                 continue;
             }
 
+            if(!TestPathToPlant(p))
+            {
+                continue;
+            }
+
             float distance = Mathf.Abs(Vector3.Distance(transform.position, p.transform.position));
             if (distance < minDistance)
             {
@@ -104,6 +109,23 @@ public class EnemyMovement : MonoBehaviour
     public void StartCollider()
     {
         agent.radius = 0.5f;
+    }
+
+    private bool TestPathToPlant(GameObject go)
+    {
+        foreach(float pos1 in new float[] { -1f, 0, 1f })
+        {
+            foreach(float pos2 in new float[] { -1f, 0, 1f })
+            {
+                NavMeshPath navMeshPath = new NavMeshPath();
+                if (agent.CalculatePath(go.transform.position + new Vector3(pos1, 0, pos2), navMeshPath) && navMeshPath.status == NavMeshPathStatus.PathComplete)
+                {
+                    return true;
+                }
+            }
+        }
+
+        return false;
     }
 
 }

@@ -17,6 +17,10 @@ public class StringPair
 
 public class EnemyWavesUI : MonoBehaviour
 {
+    public AudioClip waveFinishSoundEffect;
+    public Color currentWaveColor;
+    public Color nextWaveColor;
+
     List<StringPair> enemiesInWave;
     List<EnemySpawner> enemySpawners = new List<EnemySpawner>();
 
@@ -24,8 +28,11 @@ public class EnemyWavesUI : MonoBehaviour
     TextMeshProUGUI counterText;
     TextMeshProUGUI enemiesText;
 
+    bool firstFinish = false;
     bool gotNext = false;
     NextWaveStart waveStart;
+
+    AudioSource audioSource;
 
     private void Start()
     {
@@ -55,6 +62,8 @@ public class EnemyWavesUI : MonoBehaviour
         enemiesText = gameObject.GetComponent<TextMeshProUGUI>();
 
         waveStart = GameObject.Find("StartWaveArea").GetComponent<NextWaveStart>();
+
+        audioSource = gameObject.GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -77,11 +86,16 @@ public class EnemyWavesUI : MonoBehaviour
         {
             ShowCurrentEnemies(spawnedEnemies);
             gotNext = false;
+            firstFinish = true;
         }
         else
         {
             if (!gotNext)
             {
+                if (firstFinish)
+                {
+                    audioSource.PlayOneShot(waveFinishSoundEffect);
+                }
                 waveStart.waveOngoing = false;
                 ShowNextWaveEnemies();
                 gotNext = true;
@@ -114,6 +128,7 @@ public class EnemyWavesUI : MonoBehaviour
             }
         }
 
+        enemiesText.color = currentWaveColor;
         enemiesText.text = text;
     }
 
@@ -145,6 +160,7 @@ public class EnemyWavesUI : MonoBehaviour
             }
         }
 
+        enemiesText.color = nextWaveColor;
         enemiesText.text = text;
     }
 
