@@ -17,6 +17,14 @@ public class PickUp_Script : MonoBehaviour
         
     }
 
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.tag == "PickUp" && pickUp == null)
+        {
+            pickUp = other.gameObject;
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "PickUp")

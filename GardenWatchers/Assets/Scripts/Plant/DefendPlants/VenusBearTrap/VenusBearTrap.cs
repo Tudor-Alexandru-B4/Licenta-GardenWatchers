@@ -23,6 +23,8 @@ public class VenusBearTrap : IPlantAttack
     // Update is called once per frame
     void Update()
     {
+        targets = FilterOutDestroiedTargets();
+
         if (!closed && targets.Count > 0)
         {
             if (waitBeforeCloseTimer >= waitBeforeClose)
@@ -70,6 +72,22 @@ public class VenusBearTrap : IPlantAttack
     IEnumerator TeleportMiddle(GameObject obj)
     {
         yield return new WaitForSeconds(0.1f);
-        obj.transform.position = new Vector3(transform.position.x, 0.5f, transform.position.z);
+        if (obj)
+        {
+            obj.transform.position = new Vector3(transform.position.x, 0.5f, transform.position.z);
+        }
+    }
+
+    List<GameObject> FilterOutDestroiedTargets()
+    {
+        List<GameObject> existingTargets = new List<GameObject>();
+        foreach (GameObject target in targets)
+        {
+            if (target)
+            {
+                existingTargets.Add(target);
+            }
+        }
+        return existingTargets;
     }
 }
