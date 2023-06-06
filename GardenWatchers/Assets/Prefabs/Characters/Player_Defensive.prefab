@@ -394,6 +394,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd9e041f1dc3d484f9fa9bd074d33537, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  transparent: {fileID: 2100000, guid: 47af339c6e2e0054ab56538cdb4696e7, type: 2}
   waterLevelDisplayPrefab: {fileID: 7535829517454563488, guid: 4feb0821eb2085449a2f262f45c71690, type: 3}
 --- !u!1 &389468239237687453
 GameObject:

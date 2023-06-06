@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class Planting_Script : MonoBehaviour
 {
+    public Material transparent;
     public GameObject waterLevelDisplayPrefab;
     private GameObject planter;
     private Action_Script playerAction;
@@ -100,17 +101,18 @@ public class Planting_Script : MonoBehaviour
             GameObject plantShowing = Instantiate(prefab, spawnPosition, Quaternion.identity);
 
             plantShowing.gameObject.name = "shadowPlant";
-            var oldColor = plantShowing.GetComponent<Renderer>().material.color;
-            plantShowing.GetComponent<Renderer>().material.color = new Color(oldColor.r, oldColor.g, oldColor.b, 0.5f);
-
-            foreach(Transform child in plantShowing.transform)
+            if (plantShowing.GetComponent<Renderer>())
             {
-                if (!child.gameObject.GetComponent<Renderer>())
-                {
-                    continue;
-                }
-                oldColor = child.gameObject.GetComponent<Renderer>().material.color;
-                child.gameObject.GetComponent<Renderer>().material.color = new Color(oldColor.r, oldColor.g, oldColor.b, 0.5f);
+                var oldColor = plantShowing.GetComponent<Renderer>().material.color;
+                plantShowing.GetComponent<Renderer>().material = transparent;
+                plantShowing.GetComponent<Renderer>().material.color = new Color(oldColor.r, oldColor.g, oldColor.b, 0.5f);
+            }
+
+            foreach(Renderer child in plantShowing.transform.GetComponentsInChildren<Renderer>())
+            {
+                var oldColor = child.material.color;
+                child.material = transparent;
+                child.material.color = new Color(oldColor.r, oldColor.g, oldColor.b, 0.5f);
             }
 
             plantShowing.transform.parent = planter.gameObject.transform;

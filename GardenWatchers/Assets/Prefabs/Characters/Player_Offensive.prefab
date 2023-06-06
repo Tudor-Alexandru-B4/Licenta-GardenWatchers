@@ -159,7 +159,7 @@ MonoBehaviour:
   pickUpDetector: {fileID: 3638267171413263813}
   seedList:
   - {fileID: 4204929431817636717, guid: 18746fecf09e97344975c6e1e3b282aa, type: 3}
-  - {fileID: 2027596686593616263, guid: e2667ef71cd278b4195a02b9fedeb040, type: 3}
+  - {fileID: 2073469016611933211, guid: fe7e9e1716aa4b642abea9eef0aa428c, type: 3}
   - {fileID: 2027596686593616263, guid: a32995fd647b8344ebb5c7279dcd4192, type: 3}
   - {fileID: 4204929431817636717, guid: b94fa4b9ad97e5743a4d995bdc07ad96, type: 3}
   - {fileID: 4204929431817636717, guid: b46e952da4158544cba638b013628365, type: 3}
@@ -425,4 +425,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd9e041f1dc3d484f9fa9bd074d33537, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  transparent: {fileID: 2100000, guid: 47af339c6e2e0054ab56538cdb4696e7, type: 2}
   waterLevelDisplayPrefab: {fileID: 7535829517454563488, guid: 4feb0821eb2085449a2f262f45c71690, type: 3}
