@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class BasicPlantAttack : IPlantAttack
 {
+    public GameObject partToRotate;
+    public GameObject firePoint;
+
     public GameObject bullet;
     public float bulletSpeed;
 
@@ -36,11 +39,12 @@ public class BasicPlantAttack : IPlantAttack
             return;
         }
 
-        transform.rotation = Quaternion.LookRotation(target.transform.position - transform.position, transform.up);
+        partToRotate.transform.rotation = Quaternion.LookRotation(target.transform.position - partToRotate.transform.position, transform.up);
+        firePoint.transform.rotation = Quaternion.LookRotation(target.transform.position - firePoint.transform.position, transform.up);
 
-        GameObject bulletGameObject = Instantiate(bullet, transform.position, transform.rotation);
+        GameObject bulletGameObject = Instantiate(bullet, firePoint.transform.position, firePoint.transform.rotation);
         bulletGameObject.GetComponent<BasicBullet>().damage = damage;
-        bulletGameObject.gameObject.GetComponent<Rigidbody>().AddForce(transform.forward * bulletSpeed);
+        bulletGameObject.gameObject.GetComponent<Rigidbody>().AddForce(firePoint.transform.forward * bulletSpeed);
         AddStunTime(attackCooldown);
     }
 }

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3638267170455877582}
   - component: {fileID: 3638267170455877569}
   - component: {fileID: 3638267170455877568}
+  - component: {fileID: 3283493092514090570}
   m_Layer: 7
   m_Name: Player_Offensive
   m_TagString: Player
@@ -31,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 3638267170455877576}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -5, y: 1.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3638267171349303892}
@@ -158,17 +159,31 @@ MonoBehaviour:
   plantDetector: {fileID: 3638267171465973133}
   pickUpDetector: {fileID: 3638267171413263813}
   seedList:
-  - {fileID: 4204929431817636717, guid: 18746fecf09e97344975c6e1e3b282aa, type: 3}
-  - {fileID: 2027596686593616263, guid: e2667ef71cd278b4195a02b9fedeb040, type: 3}
-  - {fileID: 2027596686593616263, guid: a32995fd647b8344ebb5c7279dcd4192, type: 3}
-  - {fileID: 4204929431817636717, guid: b94fa4b9ad97e5743a4d995bdc07ad96, type: 3}
-  - {fileID: 4204929431817636717, guid: b46e952da4158544cba638b013628365, type: 3}
+  - {fileID: 3873130078074744444, guid: 71060c7dfcb764f42928458a955cb408, type: 3}
+  - {fileID: 2073469016611933211, guid: fe7e9e1716aa4b642abea9eef0aa428c, type: 3}
+  - {fileID: 5678808560532832466, guid: 6539987860711f34e8df540757bdb058, type: 3}
+  - {fileID: 539965758329758333, guid: b1a345f26ba33ba4b837d2132f0ce675, type: 3}
+  - {fileID: 6067662212351693191, guid: dc3b5314213ace94d9af170bdbc8e020, type: 3}
   seedIndex: 0
   abilityPrefab: {fileID: 4978188310220605231, guid: 719bd6a34a18b7449be30db66dc0fcf0, type: 3}
   ability2Prefab: {fileID: 3253571922187439124, guid: e2626033780d58244a5487b56f1e82de, type: 3}
   abilityCooldown: 10
   ability2Cooldown: 30
   pickUp: {fileID: 0}
+--- !u!114 &3283493092514090570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3638267170455877576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbf3575480402db40813e763382412fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: 0
+  eraseRenderer: 0
 --- !u!1 &3638267171349303893
 GameObject:
   m_ObjectHideFlags: 0
@@ -245,7 +260,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1.25, y: 1, z: 1.25}
   m_Center: {x: 0, y: -0.5, z: 0}
 --- !u!54 &3638267171413263811
 Rigidbody:
@@ -320,7 +335,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.75, y: 1, z: 0.75}
+  m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: -0.5, z: 0}
 --- !u!54 &3638267171465973132
 Rigidbody:
@@ -395,7 +410,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.5, y: 1, z: 1.5}
+  m_Size: {x: 1.25, y: 1, z: 1.25}
   m_Center: {x: 0, y: -1, z: 0}
 --- !u!54 &3638267172011429555
 Rigidbody:
@@ -425,4 +440,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd9e041f1dc3d484f9fa9bd074d33537, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  transparent: {fileID: 2100000, guid: 47af339c6e2e0054ab56538cdb4696e7, type: 2}
   waterLevelDisplayPrefab: {fileID: 7535829517454563488, guid: 4feb0821eb2085449a2f262f45c71690, type: 3}

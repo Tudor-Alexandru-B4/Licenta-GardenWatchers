@@ -77,6 +77,7 @@ public class EnemyWavesUI : MonoBehaviour
         {
             if(spawnedEnemies.Count <= 0)
             {
+                enemiesText.text = "";
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
             return;

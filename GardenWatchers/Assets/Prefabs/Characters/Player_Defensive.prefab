@@ -45,7 +45,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1.25, y: 1, z: 1.25}
   m_Center: {x: 0, y: -0.5, z: 0}
 --- !u!54 &389468238009398551
 Rigidbody:
@@ -120,7 +120,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.75, y: 1, z: 0.75}
+  m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: -0.5, z: 0}
 --- !u!54 &389468238204635083
 Rigidbody:
@@ -165,6 +165,7 @@ GameObject:
   - component: {fileID: 389468238532207991}
   - component: {fileID: 389468238532207984}
   - component: {fileID: 389468238532207985}
+  - component: {fileID: 5830508453478028497}
   m_Layer: 7
   m_Name: Player_Defensive
   m_TagString: Player
@@ -181,7 +182,7 @@ Transform:
   m_GameObject: {fileID: 389468238532207993}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -6.4, y: 1.5, z: -2.52}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 389468239237687454}
@@ -319,6 +320,20 @@ MonoBehaviour:
   abilityCooldown: 10
   ability2Cooldown: 30
   pickUp: {fileID: 0}
+--- !u!114 &5830508453478028497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 389468238532207993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbf3575480402db40813e763382412fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: 2
+  eraseRenderer: 0
 --- !u!1 &389468239088302701
 GameObject:
   m_ObjectHideFlags: 0
@@ -364,7 +379,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.5, y: 1, z: 1.5}
+  m_Size: {x: 1.25, y: 1, z: 1.25}
   m_Center: {x: 0, y: -1, z: 0}
 --- !u!54 &389468239088302703
 Rigidbody:
@@ -394,6 +409,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd9e041f1dc3d484f9fa9bd074d33537, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  transparent: {fileID: 2100000, guid: 47af339c6e2e0054ab56538cdb4696e7, type: 2}
   waterLevelDisplayPrefab: {fileID: 7535829517454563488, guid: 4feb0821eb2085449a2f262f45c71690, type: 3}
 --- !u!1 &389468239237687453
 GameObject:

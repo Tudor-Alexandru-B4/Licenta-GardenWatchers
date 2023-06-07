@@ -15,6 +15,22 @@ public class Watering_Script : MonoBehaviour
         playerAction = gameObject.transform.parent.GetComponent<Action_Script>();
     }
 
+    private void OnTriggerStay(Collider other)
+    {
+        if (plant == null && well == null)
+        {
+            if (other.gameObject.tag == "Plant")
+            {
+                plant = other.gameObject;
+
+            }
+            else if (other.gameObject.tag == "Well")
+            {
+                well = other.gameObject;
+            }
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Plant")
@@ -29,7 +45,7 @@ public class Watering_Script : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "FarmLand")
+        if (other.gameObject.tag == "Plant")
         {
             plant = null;
             
