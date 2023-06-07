@@ -162,8 +162,8 @@ MonoBehaviour:
   - {fileID: 4204929431817636717, guid: 18746fecf09e97344975c6e1e3b282aa, type: 3}
   - {fileID: 2073469016611933211, guid: fe7e9e1716aa4b642abea9eef0aa428c, type: 3}
   - {fileID: 5678808560532832466, guid: 6539987860711f34e8df540757bdb058, type: 3}
-  - {fileID: 4204929431817636717, guid: b94fa4b9ad97e5743a4d995bdc07ad96, type: 3}
-  - {fileID: 4204929431817636717, guid: b46e952da4158544cba638b013628365, type: 3}
+  - {fileID: 539965758329758333, guid: b1a345f26ba33ba4b837d2132f0ce675, type: 3}
+  - {fileID: 6067662212351693191, guid: dc3b5314213ace94d9af170bdbc8e020, type: 3}
   seedIndex: 0
   abilityPrefab: {fileID: 4978188310220605231, guid: 719bd6a34a18b7449be30db66dc0fcf0, type: 3}
   ability2Prefab: {fileID: 3253571922187439124, guid: e2626033780d58244a5487b56f1e82de, type: 3}

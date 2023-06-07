@@ -1646,7 +1646,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 389468238532207989, guid: c885cc0f7979a404480baa861755ab0e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 389468238532207989, guid: c885cc0f7979a404480baa861755ab0e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1807,10 +1807,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3638267170455877568, guid: 1f97678b8d358b743a381dca91d9ead9, type: 3}
-      propertyPath: seedList.Array.data[3]
-      value: 
-      objectReference: {fileID: 539965758329758333, guid: b1a345f26ba33ba4b837d2132f0ce675, type: 3}
     - target: {fileID: 3638267170455877576, guid: 1f97678b8d358b743a381dca91d9ead9, type: 3}
       propertyPath: m_Name
       value: Player_Offensive
@@ -1825,7 +1821,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3638267170455877580, guid: 1f97678b8d358b743a381dca91d9ead9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3638267170455877580, guid: 1f97678b8d358b743a381dca91d9ead9, type: 3}
       propertyPath: m_LocalPosition.z
