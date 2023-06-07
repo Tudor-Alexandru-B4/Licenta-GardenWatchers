@@ -18,7 +18,7 @@ public class Planting_Script : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.tag == "FarmLand" && planter == null && planter != other.gameObject)
+        if (other.gameObject.tag == "FarmLand" && planter == null)
         {
             planter = other.gameObject;
 

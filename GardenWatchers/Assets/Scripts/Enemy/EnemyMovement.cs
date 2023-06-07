@@ -51,19 +51,50 @@ public class EnemyMovement : MonoBehaviour
         else
         {
             List<GameObject> plants = GameObject.FindGameObjectsWithTag("Plant").ToList<GameObject>();
-            if (plants.Count <= 0 || (target != null && !plants.Contains(target)))
+            if (plants.Count <= 0 || (target != null && !plants.Contains(target)) || !TestPathToPlant(target))
             {
                 target = null;
                 agent.SetDestination(transform.position);
-                return;
             }
 
-            target = ComputeClosestPlant(plants);
-            if(target != null)
+            if(target == null)
             {
-                agent.SetDestination(target.transform.position);
+                target = ComputeClosestPlant(plants);
+                if (target != null)
+                {
+                    agent.SetDestination(target.transform.position);
+                }
             }
         }
+    }
+
+    private bool CheckTargetAvailable(List<GameObject> plants)
+    {
+        if(target == null)
+        {
+            return false;
+        }
+        
+        if(plants.Count <= 0 || (target != null && !plants.Contains(target)))
+        {
+            return false;
+        }
+
+        if (!TestPathToPlant(target))
+        {
+            return false;
+        }
+
+        var dist = Mathf.Abs(Vector3.Distance(transform.position, target.transform.position));
+        foreach (GameObject plant in plants)
+        {
+            if(Mathf.Abs(Vector3.Distance(transform.position, target.transform.position)) < dist)
+            {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     GameObject ComputeClosestPlant(List<GameObject> plants)
@@ -113,6 +144,11 @@ public class EnemyMovement : MonoBehaviour
 
     private bool TestPathToPlant(GameObject go)
     {
+        if(go == null || !go)
+        {
+            return false;
+        }
+
         foreach(float pos1 in new float[] { -1f, 0, 1f })
         {
             foreach(float pos2 in new float[] { -1f, 0, 1f })
