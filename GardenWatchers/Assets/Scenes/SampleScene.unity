@@ -458,7 +458,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!43 &796767371
 Mesh:
@@ -1556,7 +1556,7 @@ Transform:
   - {fileID: 1090569569}
   - {fileID: 1065728125}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &1872588508
 MeshCollider:
@@ -1699,7 +1699,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7215489587510392371, guid: 31f71b29f80f73c44818682a53a89cff, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7215489587510392371, guid: 31f71b29f80f73c44818682a53a89cff, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1756,7 +1756,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2582614707247698667, guid: 639571934dbbb45459aef3085d3f2cc5, type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 2582614707247698667, guid: 639571934dbbb45459aef3085d3f2cc5, type: 3}
       propertyPath: m_LocalPosition.x
