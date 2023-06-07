@@ -242,7 +242,7 @@ GameObject:
   - component: {fileID: 2045012110047223940}
   - component: {fileID: 2819057024916143580}
   - component: {fileID: 1006780157999576195}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PoisonSpitterModel
   m_TagString: Plant
   m_Icon: {fileID: 0}
