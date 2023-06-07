@@ -159,7 +159,7 @@ MonoBehaviour:
   plantDetector: {fileID: 3638267171465973133}
   pickUpDetector: {fileID: 3638267171413263813}
   seedList:
-  - {fileID: 4204929431817636717, guid: 18746fecf09e97344975c6e1e3b282aa, type: 3}
+  - {fileID: 3873130078074744444, guid: 71060c7dfcb764f42928458a955cb408, type: 3}
   - {fileID: 2073469016611933211, guid: fe7e9e1716aa4b642abea9eef0aa428c, type: 3}
   - {fileID: 5678808560532832466, guid: 6539987860711f34e8df540757bdb058, type: 3}
   - {fileID: 539965758329758333, guid: b1a345f26ba33ba4b837d2132f0ce675, type: 3}
