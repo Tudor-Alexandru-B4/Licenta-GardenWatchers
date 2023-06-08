@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class RangedEnemyAttack : IEnemyAttack
 {
+    public GameObject firePoint;
+
     public GameObject bulletPrefab;
     public float bulletSpeed;
 
@@ -26,11 +28,12 @@ public class RangedEnemyAttack : IEnemyAttack
             return;
         }
         transform.rotation = Quaternion.LookRotation(target.transform.position - transform.position, transform.up);
+        firePoint.transform.rotation = Quaternion.LookRotation(target.transform.position - firePoint.transform.position, firePoint.transform.up);
 
-        GameObject bulletGameObject = Instantiate(bulletPrefab, transform.position, transform.rotation);
+        GameObject bulletGameObject = Instantiate(bulletPrefab, firePoint.transform.position, firePoint.transform.rotation);
         bulletGameObject.GetComponent<RangedEnemyBullet>().waterDrainDone = waterDrainDone;
         bulletGameObject.GetComponent<RangedEnemyBullet>().waterDrainTime = waterDrainTime;
-        bulletGameObject.gameObject.GetComponent<Rigidbody>().AddForce(transform.forward * bulletSpeed);
+        bulletGameObject.gameObject.GetComponent<Rigidbody>().AddForce(firePoint.transform.forward * bulletSpeed);
         //target.GetComponent<WaterLife>().AddToActiveDrainTimed(waterDrainDone, waterDrainTime);
         AddStunTime(attackCooldown);
         TrySelfDamage();
