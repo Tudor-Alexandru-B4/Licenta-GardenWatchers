@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class VenusBearTrap : IPlantAttack
 {
+    public GameObject plantClosed;
+    public GameObject plantOpened;
+
     public float stunTime;
     public float waitBeforeClose;
     public float closedAfterStunTime;
     public bool closed = false;
-    public Vector3 closedScale;
-    Vector3 openScale;
 
     float closedTime = 0;
     public float waitBeforeCloseTimer = 0;
@@ -17,7 +18,7 @@ public class VenusBearTrap : IPlantAttack
     // Start is called before the first frame update
     void Start()
     {
-        openScale = transform.localScale;
+        plantClosed.SetActive(false);
     }
 
     // Update is called once per frame
@@ -29,7 +30,8 @@ public class VenusBearTrap : IPlantAttack
         {
             if (waitBeforeCloseTimer >= waitBeforeClose)
             {
-                transform.localScale = closedScale;
+                plantOpened.SetActive(false);
+                plantClosed.SetActive(true);
                 StunTargets();
                 closedTime = stunTime + closedAfterStunTime;
                 waitBeforeCloseTimer = 0;
@@ -43,7 +45,8 @@ public class VenusBearTrap : IPlantAttack
 
         if (closedTime <= 0 && closed)
         {
-            transform.localScale = openScale;
+            plantClosed.SetActive(false);
+            plantOpened.SetActive(true);
             closed = false;
         }
         else
