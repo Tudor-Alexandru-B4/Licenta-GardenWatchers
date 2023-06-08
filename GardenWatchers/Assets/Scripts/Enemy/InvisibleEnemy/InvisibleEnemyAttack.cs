@@ -1,19 +1,20 @@
-using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class InvisibleEnemyAttack : IEnemyAttack
 {
     CapsuleCollider collider;
-    MeshRenderer mesh;
+    List<MeshRenderer> mesh = new List<MeshRenderer>();
 
     private void Start()
     {
         collider = gameObject.GetComponent<CapsuleCollider>();
-        mesh = gameObject.GetComponent<MeshRenderer>();
+        mesh = new List<MeshRenderer>(gameObject.GetComponentsInChildren<MeshRenderer>());
         collider.enabled = false;
-        mesh.enabled = false;
+        foreach(var m in mesh)
+        {
+            m.enabled = false;
+        }
     }
 
     // Update is called once per frame
@@ -38,7 +39,10 @@ public class InvisibleEnemyAttack : IEnemyAttack
         }
 
         collider.enabled = true;
-        mesh.enabled = true;
+        foreach (var m in mesh)
+        {
+            m.enabled = true;
+        }
         if (target.tag == "Well")
         {
             target.GetComponent<WellLife>().AddToActiveDrainTimed(waterDrainDone, waterDrainTime);
