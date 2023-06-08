@@ -1,11 +1,16 @@
 using UnityEngine;
 
-public class StickyNectarTrap : MonoBehaviour
+public class StickyNectarTrap : Planted
 {
     public float enemySpeedDebuf;
 
     private void OnTriggerStay(Collider other)
     {
+        if (!planted)
+        {
+            return;
+        }
+
         if (other.tag == "Enemy")
         {
             var enemyMovement = other.GetComponent<EnemyMovement>();
@@ -20,6 +25,11 @@ public class StickyNectarTrap : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
+        if (!planted)
+        {
+            return;
+        }
+
         if (other.tag == "Enemy")
         {
             var enemyMovement = other.GetComponent<EnemyMovement>();

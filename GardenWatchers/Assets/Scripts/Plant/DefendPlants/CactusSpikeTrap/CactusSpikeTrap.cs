@@ -1,11 +1,17 @@
 using System.Collections.Generic;
+using System.Numerics;
 using UnityEngine;
 
-public class CactusSpikeTrap : MonoBehaviour
+public class CactusSpikeTrap : Planted
 {
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Enemy")
+        if (!planted)
+        {
+            return;
+        }
+
+        if (other.tag == "Enemy")
         {
             List<IEnemyAttack> enemyAttacks = new List<IEnemyAttack>();
             RandomUtils.GetInterfaces<IEnemyAttack>(out enemyAttacks, other.gameObject);

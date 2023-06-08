@@ -178,6 +178,7 @@ GameObject:
   - component: {fileID: 4048658854697956057}
   - component: {fileID: 9097164098770456986}
   - component: {fileID: 3860890347720439448}
+  - component: {fileID: 7097782877128912953}
   m_Layer: 10
   m_Name: CactusSpikeTrapModel
   m_TagString: Plant
@@ -251,6 +252,25 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.6692252, y: 1.1517861, z: 2.7002857}
   m_Center: {x: -0.0049705505, y: 0.025893092, z: -0.011577129}
+--- !u!114 &7097782877128912953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5930255284552820493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 431312bc8dde7134f833cc65cba9b759, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  planted: 0
+  attackCooldown: 0
+  damage: 0
+  canAttack: 1
+  attackStunTime: 0
+  targets: []
+  toActivate: {fileID: 6813126083093045611}
 --- !u!1 &6813126083093045622
 GameObject:
   m_ObjectHideFlags: 0
@@ -296,6 +316,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02e504be956c33342bceff73d167c73d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  planted: 0
 --- !u!65 &6813126083093045608
 BoxCollider:
   m_ObjectHideFlags: 0
