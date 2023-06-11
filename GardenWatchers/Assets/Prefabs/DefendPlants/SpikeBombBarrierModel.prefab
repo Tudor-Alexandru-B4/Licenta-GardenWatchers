@@ -706,7 +706,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 10
+  m_Radius: 2
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6403520058743072280
 GameObject:
@@ -903,7 +903,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canBeAttacked: 1
-  maxWater: 250
+  maxWater: 500
   currentWater: 0
   passiveDrainSpeed: 1
   activeDrainSpeed: 0
@@ -936,9 +936,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29ba83ddd68fb904cb84b6d31cf79317, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spikeDamage: 15
+  spikeDamage: 20
   spikeSpeed: 500
-  spikeCooldown: 2.5
+  spikeCooldown: 1
   spikeList: []
 --- !u!1 &6895387884601969955
 GameObject:

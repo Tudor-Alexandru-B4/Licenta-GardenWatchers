@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DirtTosserBullet : MonoBehaviour
 {
+    public float aoeDamgePercent;
     public float damage;
     public float bulletSpeed;
     public float impactRadius;
@@ -65,8 +66,14 @@ public class DirtTosserBullet : MonoBehaviour
             {
                 if (enemy)
                 {
-                    Debug.Log(enemy.gameObject.name);
-                    enemy.TakeDamage(damage);
+                    if(enemy.gameObject == collision.gameObject)
+                    {
+                        enemy.TakeDamage(damage);
+                    }
+                    else
+                    {
+                        enemy.TakeDamage(damage * aoeDamgePercent);
+                    }
                 }
             }
             Destroy(gameObject);

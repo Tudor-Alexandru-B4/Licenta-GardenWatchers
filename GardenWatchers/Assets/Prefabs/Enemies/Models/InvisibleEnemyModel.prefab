@@ -90,7 +90,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1fe2f81964d01d4f9581d873725ea29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHp: 100
+  maxHp: 200
   currentHp: 0
   seedDropChance: 100
   seedprefab: {fileID: 1232252046988495515, guid: 31f71b29f80f73c44818682a53a89cff, type: 3}
@@ -108,9 +108,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasThorns: 0
   thornsDamagePercent: 10
-  attackCooldown: 7.5
-  waterDrainDone: 10
-  waterDrainTime: 1
+  attackCooldown: 0.5
+  waterDrainDone: 80
+  waterDrainTime: 0.1
   canAttack: 1
   attackStunTime: 0
   firstHitMultiplier: 2.5
@@ -172,7 +172,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.25
+  m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &4858930287058752456
 MonoBehaviour:

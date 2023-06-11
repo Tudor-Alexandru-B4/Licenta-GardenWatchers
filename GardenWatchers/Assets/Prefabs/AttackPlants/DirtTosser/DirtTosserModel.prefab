@@ -180,8 +180,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planted: 0
-  attackCooldown: 5
-  damage: 30
+  attackCooldown: 3
+  damage: 20
   canAttack: 1
   attackStunTime: 0
   targets: []
@@ -244,7 +244,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 10
+  m_Radius: 6
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3411585290881418743
 GameObject:

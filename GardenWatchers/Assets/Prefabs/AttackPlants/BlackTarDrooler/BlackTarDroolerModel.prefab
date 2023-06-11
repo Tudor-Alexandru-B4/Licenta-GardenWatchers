@@ -272,14 +272,14 @@ MonoBehaviour:
   targets: []
   droolStart: {fileID: 6410244546321552603}
   blackTarPrefab: {fileID: 8719264064495165750, guid: a9ee71f966bcadb469ac95a109d8682a, type: 3}
-  blackTarSize: {x: 15, y: 0, z: 15}
+  blackTarSize: {x: 10, y: 0, z: 10}
   blackTarIncrement: 0.1
   blackTarDecrement: 0.2
   blackTarStayTime: 8
-  blackTarCooldown: 5
+  blackTarCooldown: 6
   blackTarDuration: 4
-  blackTarTicDamage: 3
-  timeBetweenBlackTarTics: 0.4
+  blackTarTicDamage: 40
+  timeBetweenBlackTarTics: 2
   blackTarSlowDebuf: 2.5
 --- !u!1 &6410244545577956778
 GameObject:
