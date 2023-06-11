@@ -3,6 +3,10 @@ using UnityEngine;
 
 public class InvisibleEnemyAttack : IEnemyAttack
 {
+    public float firstHitMultiplier = 3f;
+    bool damageDone = false;
+    bool redused = false;
+
     CapsuleCollider collider;
     List<MeshRenderer> mesh = new List<MeshRenderer>();
 
@@ -15,6 +19,7 @@ public class InvisibleEnemyAttack : IEnemyAttack
         {
             m.enabled = false;
         }
+        waterDrainDone *= firstHitMultiplier;
     }
 
     // Update is called once per frame
@@ -46,11 +51,20 @@ public class InvisibleEnemyAttack : IEnemyAttack
         if (target.tag == "Well")
         {
             target.GetComponent<WellLife>().AddToActiveDrainTimed(waterDrainDone, waterDrainTime);
+            damageDone = true;
         }
         else
         {
             target.GetComponent<WaterLife>().AddToActiveDrainTimed(waterDrainDone, waterDrainTime);
+            damageDone = true;
         }
+
+        if(!redused && damageDone)
+        {
+            redused = true;
+            waterDrainDone /= firstHitMultiplier;
+        }
+
         AddStunTime(attackCooldown);
         TrySelfDamage();
     }

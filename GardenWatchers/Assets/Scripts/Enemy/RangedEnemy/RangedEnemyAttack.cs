@@ -34,7 +34,7 @@ public class RangedEnemyAttack : IEnemyAttack
         bulletGameObject.GetComponent<RangedEnemyBullet>().waterDrainDone = waterDrainDone;
         bulletGameObject.GetComponent<RangedEnemyBullet>().waterDrainTime = waterDrainTime;
         bulletGameObject.gameObject.GetComponent<Rigidbody>().AddForce(firePoint.transform.forward * bulletSpeed);
-        //target.GetComponent<WaterLife>().AddToActiveDrainTimed(waterDrainDone, waterDrainTime);
+
         AddStunTime(attackCooldown);
         TrySelfDamage();
     }

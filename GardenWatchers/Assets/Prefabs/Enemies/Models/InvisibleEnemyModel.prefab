@@ -113,6 +113,7 @@ MonoBehaviour:
   waterDrainTime: 1
   canAttack: 1
   attackStunTime: 0
+  firstHitMultiplier: 2.5
 --- !u!136 &2807659257083741792
 CapsuleCollider:
   m_ObjectHideFlags: 0
