@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class DirtTosserAttack : IPlantAttack
 {
+    public float aoeDamgePercent = 0.2f;
     public GameObject bullet;
     public float bulletSpeed;
     public float impactRadius = 2.5f;
@@ -45,6 +46,7 @@ public class DirtTosserAttack : IPlantAttack
         dirtTosser.impactRadius = impactRadius;
         dirtTosser.target = target;
         dirtTosser.bulletSpeed = bulletSpeed;
+        dirtTosser.aoeDamgePercent = aoeDamgePercent;
         AddStunTime(attackCooldown);
     }
 }

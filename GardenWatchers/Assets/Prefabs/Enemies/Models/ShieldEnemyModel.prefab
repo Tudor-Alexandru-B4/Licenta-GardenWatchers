@@ -317,9 +317,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasThorns: 0
   thornsDamagePercent: 10
-  attackCooldown: 7.5
-  waterDrainDone: 10
-  waterDrainTime: 1
+  attackCooldown: 1
+  waterDrainDone: 40
+  waterDrainTime: 0.1
   canAttack: 1
   attackStunTime: 0
 --- !u!114 &2477781455752656260
@@ -334,7 +334,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1fe2f81964d01d4f9581d873725ea29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHp: 100
+  maxHp: 500
   currentHp: 0
   seedDropChance: 100
   seedprefab: {fileID: 1232252046988495515, guid: 31f71b29f80f73c44818682a53a89cff, type: 3}
@@ -544,7 +544,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1fe2f81964d01d4f9581d873725ea29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHp: 250
+  maxHp: 750
   currentHp: 0
   seedDropChance: 100
   seedprefab: {fileID: 1232252046988495515, guid: 31f71b29f80f73c44818682a53a89cff, type: 3}

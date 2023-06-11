@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canBeAttacked: 1
-  maxWater: 500
+  maxWater: 1000
   currentWater: 0
   passiveDrainSpeed: 1
   activeDrainSpeed: 0

@@ -127,7 +127,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 8
+  m_Radius: 4
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &6117108531701031747
 MonoBehaviour:
@@ -382,7 +382,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 189b199cc9dd0b74c92692aae1bc01ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 0}
+  agent: {fileID: 3585569256209678768}
   target: {fileID: 0}
   canMove: 1
   isSlowed: 0
@@ -398,7 +398,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1fe2f81964d01d4f9581d873725ea29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHp: 100
+  maxHp: 200
   currentHp: 0
   seedDropChance: 100
   seedprefab: {fileID: 1232252046988495515, guid: 31f71b29f80f73c44818682a53a89cff, type: 3}
@@ -416,9 +416,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasThorns: 0
   thornsDamagePercent: 10
-  attackCooldown: 7
-  waterDrainDone: 15
-  waterDrainTime: 1.5
+  attackCooldown: 1
+  waterDrainDone: 80
+  waterDrainTime: 0.1
   canAttack: 1
   attackStunTime: 0
   firePoint: {fileID: 8867857503284892469}
@@ -435,7 +435,7 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
-  m_Height: 7
+  m_Height: 8
   m_Direction: 1
   m_Center: {x: 0, y: -0.75, z: 0}
 --- !u!1 &8867857503284892469

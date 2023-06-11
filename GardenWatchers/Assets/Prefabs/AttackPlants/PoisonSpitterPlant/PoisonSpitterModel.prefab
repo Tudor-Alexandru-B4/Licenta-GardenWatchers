@@ -295,7 +295,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canBeAttacked: 1
-  maxWater: 50
+  maxWater: 200
   currentWater: 0
   passiveDrainSpeed: 1
   activeDrainSpeed: 0
@@ -329,8 +329,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planted: 0
-  attackCooldown: 2
-  damage: 7
+  attackCooldown: 1
+  damage: 35
   canAttack: 1
   attackStunTime: 0
   targets: []
@@ -398,7 +398,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 3.5
+  m_Radius: 3
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8859707991427791073
 GameObject:

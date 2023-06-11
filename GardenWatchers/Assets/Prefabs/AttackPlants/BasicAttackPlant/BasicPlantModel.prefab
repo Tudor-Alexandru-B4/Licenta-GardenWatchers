@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canBeAttacked: 1
-  maxWater: 100
+  maxWater: 300
   currentWater: 0
   passiveDrainSpeed: 1
   activeDrainSpeed: 0
@@ -162,8 +162,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planted: 0
-  attackCooldown: 2
-  damage: 10
+  attackCooldown: 1
+  damage: 60
   canAttack: 1
   attackStunTime: 0
   targets: []

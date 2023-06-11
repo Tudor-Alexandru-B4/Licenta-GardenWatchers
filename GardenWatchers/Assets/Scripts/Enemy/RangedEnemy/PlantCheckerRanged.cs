@@ -27,12 +27,15 @@ public class PlantCheckerRanged : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (movement.target == other.gameObject)
+        if (movement.canMove)
         {
-            if(!Physics.Linecast(transform.position, other.transform.position, mask))
+            if (movement.target == other.gameObject)
             {
-                movement.agent.SetDestination(transform.position);
-                attack.TryToAttack(other.gameObject);
+                if (!Physics.Linecast(transform.position, other.transform.position, mask))
+                {
+                    movement.agent.SetDestination(movement.gameObject.transform.position);
+                    attack.TryToAttack(other.gameObject);
+                }
             }
         }
     }

@@ -24,6 +24,11 @@ public class VenusBearTrap : IPlantAttack
     // Update is called once per frame
     void Update()
     {
+        if(!planted)
+        {
+            return;
+        }
+
         targets = FilterOutDestroiedTargets();
 
         if (!closed && targets.Count > 0)
@@ -86,7 +91,7 @@ public class VenusBearTrap : IPlantAttack
         List<GameObject> existingTargets = new List<GameObject>();
         foreach (GameObject target in targets)
         {
-            if (target)
+            if (target && target.GetComponent<EnemyMovement>().canMove)
             {
                 existingTargets.Add(target);
             }

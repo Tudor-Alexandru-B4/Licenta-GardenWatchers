@@ -1,9 +1,15 @@
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MenuEngine : MonoBehaviour
 {
+    public Image about;
+    public List<Sprite> info_cards = new List<Sprite>();
+    private int info_index = 0;
+
     public RectTransform controller;
     public RectTransform keyboard;
 
@@ -52,6 +58,22 @@ public class MenuEngine : MonoBehaviour
         Application.Quit();
     }
 
+    public void ChangeInfo(int index)
+    {
+        info_index = Mathf.Abs(Modulo(index, info_cards.Count));
+        about.sprite = info_cards[info_index];
+    }
+
+    public void PreviousInfo()
+    {
+        ChangeInfo(info_index - 1);
+    }
+
+    public void NextInfo()
+    {
+        ChangeInfo(info_index + 1);
+    }
+
     public void SwitchControlls()
     {
         var defNumber = settings.defender;
@@ -89,5 +111,10 @@ public class MenuEngine : MonoBehaviour
         volume = (int)volume;
         settings.musicVolume = volume / 100;
         musicVolumeText.text = volume.ToString() + " %";
+    }
+
+    private int Modulo(int a, int b)
+    {
+        return (a % b + b) % b;
     }
 }
