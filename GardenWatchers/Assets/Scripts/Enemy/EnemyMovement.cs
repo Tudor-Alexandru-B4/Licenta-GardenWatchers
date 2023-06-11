@@ -27,6 +27,7 @@ public class EnemyMovement : MonoBehaviour
         {
             StartCollider();
             canMove = true;
+            agent.isStopped = false;
         }
         else if(stunTime > 0)
         {
@@ -39,13 +40,14 @@ public class EnemyMovement : MonoBehaviour
         {
             target = null;
             agent.SetDestination(transform.position);
+            agent.isStopped = true;
             return;
         }
 
         NavMeshPath navMeshPath = new NavMeshPath();
         if (agent.CalculatePath(well.transform.position, navMeshPath) && navMeshPath.status == NavMeshPathStatus.PathComplete)
         {
-            agent.SetPath(navMeshPath);
+            agent.SetDestination(well.transform.position);
             target = well;
         }
         else

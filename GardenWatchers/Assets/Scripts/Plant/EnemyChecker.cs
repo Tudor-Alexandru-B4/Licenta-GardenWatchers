@@ -15,6 +15,17 @@ public class EnemyChecker : MonoBehaviour
         }
     }
 
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "Enemy")
+        {
+            if (!attack.targets.Contains(other.gameObject))
+            {
+                attack.targets.Add(other.gameObject);
+            }
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Enemy")
