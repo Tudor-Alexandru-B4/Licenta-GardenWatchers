@@ -4,18 +4,20 @@ public class Bucket_Script : MonoBehaviour
 {
     public float waterValue;
     public bool isEmpty = false;
-    public Color emptyColor;
-    public Color fullColor;
+    public GameObject fullBucketModel;
+    public GameObject emptyBucketModel;
     
     public void EmptyBucket()
     {
-        gameObject.GetComponent<Renderer>().material.color = emptyColor;
+        emptyBucketModel.SetActive(true);
+        fullBucketModel.SetActive(false);
         isEmpty = true;
     }
 
     public void RefillBucket()
     {
-        gameObject.GetComponent<Renderer>().material.color = fullColor;
+        fullBucketModel.SetActive(true);
+        emptyBucketModel.SetActive(false);
         isEmpty = false;
     }
 }
