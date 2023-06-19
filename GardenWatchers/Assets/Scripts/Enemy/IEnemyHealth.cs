@@ -5,12 +5,14 @@ public class IEnemyHealth : MonoBehaviour
 {
     public float maxHp;
     public float currentHp;
-    public int seedDropChance;
     public GameObject seedprefab;
+
+    SeedManager seedManager;
 
     private void Start()
     {
         currentHp = maxHp;
+        seedManager = GameObject.Find("SeedManager").GetComponent<SeedManager>();
     }
 
     [Button("TestDeath")]
@@ -37,7 +39,7 @@ public class IEnemyHealth : MonoBehaviour
     void TryToDropSeed()
     {
         var randInt = Random.Range(1, 101);
-        if(randInt <= seedDropChance)
+        if(randInt <= seedManager.currentDropChance)
         {
             Instantiate(seedprefab, transform.position, Quaternion.identity);
         }
