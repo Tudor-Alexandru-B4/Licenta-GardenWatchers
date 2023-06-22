@@ -1436,11 +1436,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a78da3f00f3328541b4526c0b0b5ec5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lineThickness: 1.25
+  lineThickness: 1
   lineIntensity: 0.5
   fillAmount: 0.2
   lineColor0: {r: 0.78431374, g: 0.14509805, b: 0.14509805, a: 1}
-  lineColor1: {r: 0, g: 1, b: 0, a: 1}
+  lineColor1: {r: 0.7279913, g: 0.51023495, b: 0.735849, a: 1}
   lineColor2: {r: 0.14509805, g: 0.25882354, b: 0.78431374, a: 1}
   additiveRendering: 0
   backfaceCulling: 1

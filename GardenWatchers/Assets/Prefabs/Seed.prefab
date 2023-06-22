@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1969203420387745508}
   - component: {fileID: 6485356509307044483}
   - component: {fileID: 2622591233807113631}
+  - component: {fileID: -416727539067057672}
   m_Layer: 0
   m_Name: Seed
   m_TagString: PickUp
@@ -110,3 +111,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f291da40f6bdff444b1844ad2e82f910, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-416727539067057672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1232252046988495515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbf3575480402db40813e763382412fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: 1
+  eraseRenderer: 0

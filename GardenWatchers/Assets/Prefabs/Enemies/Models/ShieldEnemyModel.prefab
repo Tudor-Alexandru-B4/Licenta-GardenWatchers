@@ -334,9 +334,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1fe2f81964d01d4f9581d873725ea29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageMaterial: {fileID: 2100000, guid: f9af8b2e44fb98d4e95334b893e0e905, type: 2}
   maxHp: 500
   currentHp: 0
-  seedDropChance: 100
   seedprefab: {fileID: 1232252046988495515, guid: 31f71b29f80f73c44818682a53a89cff, type: 3}
 --- !u!135 &8289832827973532245
 SphereCollider:
@@ -544,7 +544,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1fe2f81964d01d4f9581d873725ea29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageMaterial: {fileID: 0}
   maxHp: 750
   currentHp: 0
-  seedDropChance: 100
   seedprefab: {fileID: 1232252046988495515, guid: 31f71b29f80f73c44818682a53a89cff, type: 3}
